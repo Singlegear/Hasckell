@@ -1,2 +1,1 @@
-# Hasckell
-Códigos de hasckell - Disciplina programação funcional
+# Programa-o-Funcional

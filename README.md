@@ -1,1 +1,1 @@
-# Programa-o-Funcional
+# Programação Funcional - Linguagem Haskell

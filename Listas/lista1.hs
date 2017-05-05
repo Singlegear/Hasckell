@@ -1,4 +1,4 @@
-module Listapf where
+module Lista1 where
 
 --Questão 01
 menor x y

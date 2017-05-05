@@ -1,4 +1,4 @@
-module Listahaskell where
+module Listapf where
 
 --Questão 01
 menor x y
@@ -47,20 +47,17 @@ frequencia n (a:x)
                   |otherwise = frequencia  n x
 
 --Questão 10
-onlyman n (a:x) 
-                | frequencia n (a:x) == 1 = True        
+onlyman n (a:x) | frequencia n (a:x) == 1 = True        
                 | otherwise = False
 
 -- Questão 11
 maioresque n [] = []
-maioresque n (a:x) 
-                   | n < a = a : maioresque n x
+maioresque n (a:x) | n < a = a : maioresque n x
                    | otherwise = maioresque n x 
 
 -- Questão 12
-concatenar [] [] = []
-concatenar [] (b:c) = b : concatenar [] c
-concatenar (a:x) (b:c) = a : concatenar x (b:c)
+concatenar [] y = y
+concatenar (a:x) y = a : concatenar x y 
 
 --Questão 13
 calda (a:x) = x
@@ -71,11 +68,14 @@ corpo (a:x) = a : corpo x
 
 -- Questão 15
 unique [] = []
-unique (a:x) 
-             | frequencia a (a:x) == 1 = a : unique x
+unique (a:x) | frequencia a (a:x) == 1 = a : unique x
              | otherwise = unique x
 
 -- Questão 16
-menores n [] = []
-menores n (a:x) | a < menores n x = menores n x
-                | otherwise = menores n x
+menores n (a:x) = [x | x <- a:x, x < n]
+
+-- Questão 17
+alter_aux [a] = a
+alter_aux (a:x) = a ++ alter_aux x
+
+alter n = alter_aux [ [x, (-x)] | x <- [1..n]]
